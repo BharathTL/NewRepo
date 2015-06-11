@@ -1,0 +1,83 @@
+CREATE TABLE [dbo].[CampaignMaster]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [type] VARCHAR(50) NOT NULL, 
+    [goal] VARCHAR(50) NOT NULL, 
+    [timezone] VARCHAR(MAX) NOT NULL, 
+    [country] VARCHAR(MAX) NOT NULL, 
+    [age_range] VARCHAR(MAX) NOT NULL, 
+    [gender] VARCHAR(50) NOT NULL, 
+    [household] VARCHAR(MAX) NOT NULL, 
+    [income] VARCHAR(MAX) NOT NULL, 
+    [education] VARBINARY(50) NOT NULL, 
+    [marital_status] VARCHAR(MAX) NOT NULL, 
+    [own_pets] VARCHAR(MAX) NOT NULL, 
+    [manufacturers] VARCHAR(MAX) NOT NULL, 
+    [carriers] VARCHAR(MAX) NOT NULL, 
+    [os] VARCHAR(MAX) NOT NULL, 
+    [osv] VARCHAR(MAX) NOT NULL, 
+    [connection_type] VARCHAR(MAX) NOT NULL, 
+    [traffic_type] VARCHAR(MAX) NOT NULL, 
+    [exchanges] VARCHAR(MAX) NOT NULL, 
+    [interests] VARCHAR(MAX) NOT NULL, 
+    [categories] VARCHAR(MAX) NOT NULL, 
+    [finance_and_insurance] VARCHAR(MAX) NOT NULL, 
+    [shopping] VARCHAR(MAX) NOT NULL, 
+    [travel] VARCHAR(MAX) NOT NULL, 
+    [groceries] VARCHAR(MAX) NOT NULL, 
+    [dining] VARCHAR(MAX) NOT NULL, 
+    [health_and_beauty] VARCHAR(MAX) NOT NULL, 
+    [whitelist] VARCHAR(MAX) NULL, 
+    [blacklist] VARCHAR(MAX) NULL
+)
+
+
+
+
+
+
+CREATE TABLE [dbo].[Campaign]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [code] VARCHAR(50) NOT NULL, 
+    [advertiser_id] VARCHAR(50) NOT NULL, 
+    [ad_domain] VARCHAR(MAX) NULL, 
+    [campaign_type] VARCHAR(50) NULL, 
+    [goal] VARCHAR(50) NULL, 
+    [timezone] VARCHAR(50) NULL, 
+    [start_date] DATETIME NULL, 
+    [end_date] DATETIME NULL, 
+    [macros] NVARCHAR(MAX) NULL, 
+    [impression_user_per_day] BIGINT NULL, 
+    [schedule] NVARCHAR(MAX) NULL, 
+    [max_bid_cpm] BIGINT NULL, 
+    [daily_budget] BIGINT NULL, 
+    [total_budget] BIGINT NULL, 
+    [daily_impression] BIGINT NULL, 
+    [total_impression] BIGINT NULL, 
+    [daily_clicks] BIGINT NULL, 
+    [total_clicks] BIGINT NULL, 
+    [daily_conversions] BIGINT NULL, 
+    [total_conversions] BIGINT NULL, 
+    [bid_optimization] BIGINT NULL, 
+    [bid_pacing] BIGINT NULL
+)
+
+
+
+
+
+CREATE TABLE [dbo].[Creative]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [campaign_id] NVARCHAR(50) NULL, 
+    [title] NVARCHAR(50) NULL, 
+    [type] NVARCHAR(50) NULL, 
+    [vast_url] NVARCHAR(MAX) NULL, 
+    [xml_content] NVARCHAR(MAX) NULL
+)
+
+
+
+
+
